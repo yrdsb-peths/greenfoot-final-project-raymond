@@ -6,8 +6,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+
+
+
 public class Amongus extends Actor
 {
+    
+    public int vSpeed = 0;
+    //gravitation constant
+    public static int GRAVITY = 3; 
+    
     GreenfootImage[] idle = new GreenfootImage[13]; 
     
     public Amongus()
@@ -15,6 +23,7 @@ public class Amongus extends Actor
         for (int i = 0; i < 13; i++)
         {
             idle[i] = new GreenfootImage("images/amongus_walking/Walk000" + i + ".png");
+            idle[i].scale(50, 60);
         }
         setImage(idle[0]);
     }
@@ -24,6 +33,13 @@ public class Amongus extends Actor
     {
         setImage(idle[imageIndex]);
         imageIndex = (imageIndex + 1) % idle.length;
+    }
+    
+    //use gravitational constant to simulate gravity
+    public void fall()
+    {
+        setLocation(getX(), getY() + vSpeed);
+        vSpeed += GRAVITY;
     }
     
     /**
@@ -55,6 +71,7 @@ public class Amongus extends Actor
             move(12);
         }
         
+        fall();
         //animate the amongus
         animateAmongus();
     }
