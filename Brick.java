@@ -15,7 +15,7 @@ public class Brick extends Actor
     
     public Brick()
     {
-        getImage().scale(getImage().getWidth() / 2, getImage().getHeight() / 3);
+        getImage().scale(getImage().getWidth() / 2, getImage().getHeight() / 2);
     }
     
     public void act()

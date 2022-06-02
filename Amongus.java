@@ -48,6 +48,34 @@ public class Amongus extends Actor
         return under != null;
     }
     
+    public void checkMoving()
+    {
+        if(Greenfoot.isKeyDown("a"))
+        {
+            setRotation(0);
+            move(-12);
+            animateAmongus();
+        }   
+        if (Greenfoot.isKeyDown("d"))
+        {
+            setRotation(0);
+            move(12);
+            animateAmongus();
+        }
+        if (Greenfoot.isKeyDown("w"))
+        {
+            setRotation(270);
+            move(12);
+            animateAmongus();
+        }
+        if (Greenfoot.isKeyDown("s"))
+        {
+            //rotate the amongus everytime it moves
+            setRotation(90);
+            move(12);
+            animateAmongus();
+        }
+    }
     
     public void checkFalling()
     {
@@ -63,32 +91,11 @@ public class Amongus extends Actor
     public void act()
     {
         //allow for player input with wasd
-        if(Greenfoot.isKeyDown("a"))
-        {
-            setRotation(0);
-            move(-12);
-        }   
-        if (Greenfoot.isKeyDown("d"))
-        {
-            setRotation(0);
-            move(12);
-        }
-        if (Greenfoot.isKeyDown("w"))
-        {
-            setRotation(270);
-            move(12);
-        }
-        if (Greenfoot.isKeyDown("s"))
-        {
-            //rotate the amongus everytime it moves
-            setRotation(90);
-            move(12);
-        }
         
+        checkMoving();
         //check if it is on brick, if not, let it fall
         checkFalling();
         
         //animate the amongus
-        animateAmongus();
     }
 }
