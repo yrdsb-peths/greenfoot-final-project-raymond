@@ -42,6 +42,20 @@ public class Amongus extends Actor
         vSpeed += GRAVITY;
     }
     
+    boolean onGround()
+    {
+        Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Brick.class);
+        return under != null;
+    }
+    
+    
+    public void checkFalling()
+    {
+        if (onGround() == false)
+        {
+            fall();
+        }
+    }
     /**
      * Act - do whatever the amongus wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -71,7 +85,9 @@ public class Amongus extends Actor
             move(12);
         }
         
-        fall();
+        //check if it is on brick, if not, let it fall
+        checkFalling();
+        
         //animate the amongus
         animateAmongus();
     }
