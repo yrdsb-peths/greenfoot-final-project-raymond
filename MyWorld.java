@@ -20,6 +20,6 @@ public class MyWorld extends World
         Amongus sus = new Amongus();
         Brick brick = new Brick();
         addObject(sus, getWidth()/2, 350);
-        addObject(brick, getWidth()/2, 350);
+        addObject(brick, getWidth()/2, 500);
     }
 }
