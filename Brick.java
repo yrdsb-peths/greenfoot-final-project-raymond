@@ -15,11 +15,20 @@ public class Brick extends Actor
     
     public Brick()
     {
-        getImage().scale(getImage().getWidth() / 2, getImage().getHeight() / 2);
+        getImage().scale(100,100);
     }
     
     public void act()
     {
-        // Add your action code here.
+        if(Greenfoot.isKeyDown("a"))
+        {
+            setRotation(0);
+            move(12);
+        }   
+        if (Greenfoot.isKeyDown("d"))
+        {
+            setRotation(0);
+            move(-12);
+        }
     }
 }

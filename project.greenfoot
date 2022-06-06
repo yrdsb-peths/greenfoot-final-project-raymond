@@ -1,5 +1,6 @@
 #Greenfoot project file
-class.Brick.image=brick.jpg
+class.Brick.image=tileset.png
+class.MyWorld.image=New\ Project.png
 dependency1.from=TitleWorld
 dependency1.to=Label
 dependency1.type=UsesDependency
@@ -73,6 +74,6 @@ target5.x=0
 target5.y=0
 version=3.0.0
 width=1936
-world.lastInstantiated=TitleWorld
+world.lastInstantiated=MyWorld
 xPosition=0
 yPosition=0
