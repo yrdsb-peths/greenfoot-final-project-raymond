@@ -11,7 +11,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Amongus extends Actor
 {
-    
+
     public int vSpeed = 0;
     //gravitation constant
     public static int GRAVITY = 3; 
@@ -87,11 +87,8 @@ public class Amongus extends Actor
     public void act()
     {
         //allow for player input with wasd
-        
         checkMoving();
         //check if it is on brick, if not, let it fall
         checkFalling();
-        
-        //animate the amongus
     }
 }
