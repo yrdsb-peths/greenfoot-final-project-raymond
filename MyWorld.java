@@ -15,8 +15,7 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1280, 720, 1); 
+        super(5000, 720, 1); 
         Amongus sus = new Amongus();
         Brick brick = new Brick();
         addObject(sus, getWidth()/2, 350);
@@ -34,5 +33,10 @@ public class MyWorld extends World
         addObject(brick,717,444);
         Brick brick2 = new Brick();
         addObject(brick2,173,424);
+        Brick brick3 = new Brick();
+        addObject(brick3,932,394);
+        Brick brick4 = new Brick();
+        addObject(brick4,328,200);
+        brick.setLocation(622,398);
     }
 }

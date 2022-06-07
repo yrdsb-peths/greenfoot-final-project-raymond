@@ -14,8 +14,8 @@ public class Amongus extends Actor
 
     public int vSpeed = 0;
     //gravitation constant
-    public static int GRAVITY = 3; 
-    private int jumpHeight = -20;
+    public static int GRAVITY = 2; 
+    private int jumpHeight = -30;
     GreenfootImage[] idle = new GreenfootImage[13]; 
     
     public Amongus()
@@ -53,13 +53,13 @@ public class Amongus extends Actor
         if(Greenfoot.isKeyDown("a"))
         {
             setRotation(0);
-            move(-12);
+            move(-8);
             animateAmongus();
         }   
         if (Greenfoot.isKeyDown("d"))
         {
             setRotation(0);
-            move(12);
+            move(8);
             animateAmongus();
         }
         if (Greenfoot.isKeyDown("space") && (onGround()==true))

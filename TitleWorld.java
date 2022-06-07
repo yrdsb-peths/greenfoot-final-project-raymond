@@ -15,7 +15,7 @@ public class TitleWorld extends World
     
     public TitleWorld()
     {
-        super(1000, 800, 1);
+        super(1280, 720, 1);
         addObject(titleLabel, getWidth()/2, getHeight()/2);
         Label instructionLabel = new Label("Press <space> to begin", 70);
         addObject(instructionLabel, getWidth()/2, 500);
