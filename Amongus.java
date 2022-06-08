@@ -11,8 +11,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Amongus extends Actor
 {
-
+    private int STEP;
     public int vSpeed = 0;
+    private int margins;
     //gravitation constant
     public static int GRAVITY = 2; 
     private int jumpHeight = -30;
@@ -55,18 +56,21 @@ public class Amongus extends Actor
             setRotation(0);
             move(-8);
             animateAmongus();
+           // Scroll.shiftX(1);
         }   
         if (Greenfoot.isKeyDown("d"))
         {
             setRotation(0);
             move(8);
             animateAmongus();
+           // Scroll.shiftX(-1);
         }
         if (Greenfoot.isKeyDown("space") && (onGround()==true))
         {
             vSpeed = jumpHeight;
             fall();
         }
+ 
     }
     
     public void checkFalling()
@@ -80,6 +84,10 @@ public class Amongus extends Actor
             vSpeed = 0;
         }
     }
+    
+
+    
+    
     /**
      * Act - do whatever the amongus wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

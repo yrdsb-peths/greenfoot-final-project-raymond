@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Brick extends Scroll
+public class Brick extends Actor
 {
     /**
      * Act - do whatever the Brick wants to do. This method is called whenever
@@ -24,11 +24,13 @@ public class Brick extends Scroll
         {
             setRotation(0);
             move(8);
+            ((MyWorld)getWorld()).shiftX(-1);
         }   
         if (Greenfoot.isKeyDown("d"))
         {
             setRotation(0);
             move(-8);
+            ((MyWorld)getWorld()).shiftX(1);
         }
         if (getX()==0)
         {
