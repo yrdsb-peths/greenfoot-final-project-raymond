@@ -32,9 +32,11 @@ public class Brick extends Actor
             move(-8);
             ((MyWorld)getWorld()).shiftX(1);
         }
-        if (getX()==0)
+        MyWorld world = (MyWorld)getWorld();
+        if (getX() <= 0)
+
         {
-            setLocation(getWorld().getWidth()-1, Greenfoot.getRandomNumber(getWorld().getHeight()/2 + 200));
+            setLocation(getWorld().getWidth()-1, Greenfoot.getRandomNumber(200) + 300);
         }
     }
 }

@@ -17,7 +17,7 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        super(1540, 512, 1); 
+        super(1540, 512, 1, false); 
         Amongus sus = new Amongus();
         Brick brick = new Brick();
         addObject(sus, getWidth()/2, 350);
@@ -57,7 +57,10 @@ public class MyWorld extends World
         Brick brick4 = new Brick();
         addObject(brick4,328,200);
         brick.setLocation(622,398);
-        Amongus amongus = new Amongus();
-        addObject(amongus,311,81);
+
+        Brick brick5 = new Brick();
+        addObject(brick5,1176,405);
+        Brick brick6 = new Brick();
+        addObject(brick6,1480,364);
     }
 }

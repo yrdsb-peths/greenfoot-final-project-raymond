@@ -51,20 +51,20 @@ public class Amongus extends Actor
     
     public void checkMoving()
     {
-        if(Greenfoot.isKeyDown("a"))
+        /*if(Greenfoot.isKeyDown("a"))
         {
             setRotation(0);
             move(-8);
             animateAmongus();
            // Scroll.shiftX(1);
-        }   
-        if (Greenfoot.isKeyDown("d"))
+        }  */ 
+        /*if (Greenfoot.isKeyDown("d"))
         {
             setRotation(0);
             move(8);
             animateAmongus();
            // Scroll.shiftX(-1);
-        }
+        }*/
         if (Greenfoot.isKeyDown("space") && (onGround()==true))
         {
             vSpeed = jumpHeight;
@@ -84,9 +84,7 @@ public class Amongus extends Actor
             vSpeed = 0;
         }
     }
-    
-
-    
+        
     
     /**
      * Act - do whatever the amongus wants to do. This method is called whenever
@@ -98,5 +96,14 @@ public class Amongus extends Actor
         checkMoving();
         //check if it is on brick, if not, let it fall
         checkFalling();
+        
+        //change world to gameOver if amongus touches the bottom.
+        MyWorld world = (MyWorld)getWorld();
+        if(getY() >= world.getHeight())
+        {
+            GameOverWorld overWorld = new GameOverWorld();
+            Greenfoot.setWorld(overWorld);
+            
+        }
     }
 }
