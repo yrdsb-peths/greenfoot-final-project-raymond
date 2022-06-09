@@ -103,7 +103,7 @@ public class Amongus extends Actor
         {
             GameOverWorld overWorld = new GameOverWorld();
             Greenfoot.setWorld(overWorld);
-            
+    
         }
     }
 }

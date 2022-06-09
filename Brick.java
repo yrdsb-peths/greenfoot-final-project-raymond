@@ -23,20 +23,20 @@ public class Brick extends Actor
         if(Greenfoot.isKeyDown("a"))
         {
             setRotation(0);
-            move(8);
+            move(10);
             ((MyWorld)getWorld()).shiftX(-1);
         }   
         if (Greenfoot.isKeyDown("d"))
         {
             setRotation(0);
-            move(-8);
+            move(-10);
             ((MyWorld)getWorld()).shiftX(1);
         }
         MyWorld world = (MyWorld)getWorld();
         if (getX() <= 0)
 
         {
-            setLocation(getWorld().getWidth()-1, Greenfoot.getRandomNumber(200) + 300);
+            setLocation(getWorld().getWidth()-1, Greenfoot.getRandomNumber(150) + 350);
         }
     }
 }

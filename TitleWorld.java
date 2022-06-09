@@ -11,7 +11,7 @@ public class TitleWorld extends World
 
     //title label
     Label titleLabel = new Label("Amongus", 100);
-    GreenfootSound background = new GreenfootSound("amongus_background.mp3");
+    static GreenfootSound background = new GreenfootSound("amongus_background.mp3");
     
     public TitleWorld()
     {

@@ -21,5 +21,24 @@ public class GameOverWorld extends World
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
         Label instructionLabel = new Label("Press <space> to play again", 70);
         addObject(instructionLabel, getWidth()/2, 500);
+        TitleWorld titleworld = new TitleWorld();
+        titleworld.background.pause();
     }   
+    
+    
+    public void playAgain()
+    {
+        if(Greenfoot.isKeyDown("space"))
+        {
+            MyWorld world = new MyWorld();
+            Greenfoot.setWorld(world);
+            TitleWorld titleworld = new TitleWorld();
+            titleworld.background.playLoop();
+        }
+    }
+    
+    public void act()
+    {
+        playAgain();
+    }
 }

@@ -2,7 +2,7 @@
 class.Brick.image=tileset.png
 class.GameOverWorld.image=Capture.PNG
 class.MyWorld.image=background.PNG
-class.TitleWorld.image=Capture.PNG
+class.TitleWorld.image=startScreen.png
 dependency1.from=TitleWorld
 dependency1.to=Label
 dependency1.type=UsesDependency
@@ -95,6 +95,6 @@ target6.x=0
 target6.y=0
 version=3.0.0
 width=1936
-world.lastInstantiated=MyWorld
+world.lastInstantiated=TitleWorld
 xPosition=0
 yPosition=0
