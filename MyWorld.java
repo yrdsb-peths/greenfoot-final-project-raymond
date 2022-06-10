@@ -11,6 +11,8 @@ public class MyWorld extends World
     public int xDirection;
     public int xOff;
     public int speed = 2;    
+    public int score = 0;
+    Label scoreLabel;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -23,6 +25,24 @@ public class MyWorld extends World
         addObject(sus, getWidth()/2, 350);
         addObject(brick, getWidth()/2, 500);
         prepare();
+        
+        //create score label
+        scoreLabel = new Label(0, 100);
+        addObject(scoreLabel, 30, 30);
+        
+    }
+    
+    public void spawnCoin()
+    {
+        int x = Greenfoot.getRandomNumber(512) + 200;
+        int y = 0;
+        Coin coin = new Coin();
+        addObject(coin, x, y);
+    }
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue(score);
     }
     
     public void shiftX(int xDirection)
@@ -62,5 +82,14 @@ public class MyWorld extends World
         addObject(brick5,1176,405);
         Brick brick6 = new Brick();
         addObject(brick6,1480,364);
+        Coin coin = new Coin();
+        addObject(coin,924,295);
+        Coin coin2 = new Coin();
+        addObject(coin2,159,335);
+        brick.setLocation(617,359);
+        Coin coin3 = new Coin();
+        addObject(coin3,332,116);
+        Coin coin4 = new Coin();
+        addObject(coin4,635,322);
     }
 }

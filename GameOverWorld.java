@@ -19,7 +19,7 @@ public class GameOverWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1280, 720, 1); 
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
-        Label instructionLabel = new Label("Press <space> to play again", 70);
+        Label instructionLabel = new Label("Press <s> to play again", 70);
         addObject(instructionLabel, getWidth()/2, 500);
         TitleWorld titleworld = new TitleWorld();
         titleworld.background.pause();
@@ -28,7 +28,7 @@ public class GameOverWorld extends World
     
     public void playAgain()
     {
-        if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("s"))
         {
             MyWorld world = new MyWorld();
             Greenfoot.setWorld(world);

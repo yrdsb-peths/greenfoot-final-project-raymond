@@ -49,6 +49,18 @@ public class Amongus extends Actor
         return under != null;
     }
     
+    public void getCoins()
+    {
+        if(isTouching(Coin.class))
+        {
+            removeTouching(Coin.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.increaseScore();
+            ((MyWorld)getWorld()).spawnCoin();
+        }
+   
+    }
+    
     public void checkMoving()
     {
         /*if(Greenfoot.isKeyDown("a"))
@@ -96,7 +108,7 @@ public class Amongus extends Actor
         checkMoving();
         //check if it is on brick, if not, let it fall
         checkFalling();
-        
+        getCoins();
         //change world to gameOver if amongus touches the bottom.
         MyWorld world = (MyWorld)getWorld();
         if(getY() >= world.getHeight())
