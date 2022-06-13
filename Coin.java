@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Coin here.
+ * Coin class used to increase the score for the player
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author: Raymond
+ * @version: June 2022
  */
 public class Coin extends ScrollingObjects
 {
@@ -28,11 +28,8 @@ public class Coin extends ScrollingObjects
     
     public void coinCounter()
     {
-        if (numCoins < 4)
-        {
-            ((MyWorld)getWorld()).spawnCoin();
-            numCoins++;
-        }        
+        ((MyWorld)getWorld()).spawnCoin();
+        numCoins++;   
     }
     
     int imageIndex = 0;
@@ -41,6 +38,7 @@ public class Coin extends ScrollingObjects
         setImage(idle[imageIndex]);
         imageIndex = (imageIndex + 1) % idle.length;
     }
+    
     public void act()
     {
         animateCoin();
@@ -58,12 +56,14 @@ public class Coin extends ScrollingObjects
         }
         MyWorld world = (MyWorld)getWorld();
         //makes num coin infinitely low; find a way to call the method only once/ remove the current object
+        
+        //if the coin is out of bounds, remove coin, lower the # of coins, call coinCounter function, which spawns a coin and increases the coinCount
         if (getX() <= 1)
         {
+            coinCounter();
             world.removeObject(this);
-            numCoins=3;
+            numCoins--;
         }
-        coinCounter();
         
     }
 }

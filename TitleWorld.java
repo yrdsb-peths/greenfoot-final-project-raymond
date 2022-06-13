@@ -1,10 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class titleWorld here.
- * 
+ * Initial Title world 
  * @author (raymond) 
- * @version (may 2022)
+ * @version (june 2022)
  */
 public class TitleWorld extends World
 {
@@ -22,6 +21,7 @@ public class TitleWorld extends World
  
     }
     
+
     public void act() 
     {
         //background music

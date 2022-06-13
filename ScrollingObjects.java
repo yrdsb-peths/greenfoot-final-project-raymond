@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ScrollingObjects here.
+ * Abstract class used to hold all of the scrolling objects
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author: Raymond
+ * @version: June 2022
  */
 public class ScrollingObjects extends Actor
 {

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GameOverWorld here.
+ * Gameover world after player loses.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author: Raymond
+ * @version: June 2022
  */
 public class GameOverWorld extends World
 {

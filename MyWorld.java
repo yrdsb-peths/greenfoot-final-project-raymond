@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Main world class where the plahyer plays the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author: Raymond
+ * @version: June 2022
  */
 public class MyWorld extends World
 {
@@ -13,6 +13,7 @@ public class MyWorld extends World
     public int speed = 2;    
     public int score = 0;
     Label scoreLabel;
+
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -29,13 +30,12 @@ public class MyWorld extends World
         //create score label
         scoreLabel = new Label(0, 100);
         addObject(scoreLabel, 30, 30);
-        
     }
     
     public void spawnCoin()
     {
-        int x = Greenfoot.getRandomNumber(512) + 200;
-        int y = 0;
+        int y = Greenfoot.getRandomNumber(512) + 50;
+        int x = 1540;
         Coin coin = new Coin();
         addObject(coin, x, y);
     }
@@ -43,6 +43,11 @@ public class MyWorld extends World
     {
         score++;
         scoreLabel.setValue(score);
+    }
+
+    public int getScore()
+    {
+        return score;
     }
     
     public void shiftX(int xDirection)

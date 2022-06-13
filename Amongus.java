@@ -1,23 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class amongus here.
+ * Main actor in the video game, the character the player controls
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author: Raymond
+ * @version: June 2022
  */
 
 
 
 public class Amongus extends Actor
 {
-    private int STEP;
-    public int vSpeed = 0;
+    public double vSpeed = 0;
     private int margins;
     //gravitation constant
-    public static int GRAVITY = 2; 
-    private int jumpHeight = -30;
+    public double gravity = 2; 
+    private double jumpHeight = -30;
     GreenfootImage[] idle = new GreenfootImage[13]; 
+    static GreenfootSound Score = new GreenfootSound("10score.mp3");
+
     
     public Amongus()
     {
@@ -39,8 +40,8 @@ public class Amongus extends Actor
     //use gravitational constant to simulate gravity
     public void fall()
     {
-        setLocation(getX(), getY() + vSpeed);
-        vSpeed += GRAVITY;
+        setLocation(getX(), (getY() + (int)vSpeed));
+        vSpeed += gravity;
     }
     
     boolean onGround()
@@ -49,7 +50,20 @@ public class Amongus extends Actor
         return under != null;
     }
     
-    public void getCoins()
+    //plays hype sound effect everytime score goes up by 10
+    public void increaseDifficulty()
+    {
+        MyWorld world = (MyWorld) getWorld();
+        if (world.getScore() % 5 == 0 && world.getScore() != 0)
+        {
+            Score.play();
+            //make the character jump higher and fall faster
+            gravity+=0.01;
+            jumpHeight-=0.15;
+        }
+    }
+
+    public void grabCoins()
     {
         if(isTouching(Coin.class))
         {
@@ -63,20 +77,6 @@ public class Amongus extends Actor
     
     public void checkMoving()
     {
-        /*if(Greenfoot.isKeyDown("a"))
-        {
-            setRotation(0);
-            move(-8);
-            animateAmongus();
-           // Scroll.shiftX(1);
-        }  */ 
-        /*if (Greenfoot.isKeyDown("d"))
-        {
-            setRotation(0);
-            move(8);
-            animateAmongus();
-           // Scroll.shiftX(-1);
-        }*/
         if (Greenfoot.isKeyDown("space") && (onGround()==true))
         {
             vSpeed = jumpHeight;
@@ -108,7 +108,7 @@ public class Amongus extends Actor
         checkMoving();
         //check if it is on brick, if not, let it fall
         checkFalling();
-        getCoins();
+        grabCoins();
         //change world to gameOver if amongus touches the bottom.
         MyWorld world = (MyWorld)getWorld();
         if(getY() >= world.getHeight())
@@ -117,5 +117,6 @@ public class Amongus extends Actor
             Greenfoot.setWorld(overWorld);
     
         }
+        increaseDifficulty();
     }
 }
