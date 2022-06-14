@@ -15,9 +15,11 @@ public class TitleWorld extends World
     public TitleWorld()
     {
         super(1280, 720, 1);
-        addObject(titleLabel, getWidth()/2, getHeight()/2);
-        Label instructionLabel = new Label("Press <space> to begin", 70);
-        addObject(instructionLabel, getWidth()/2, 500);
+        addObject(titleLabel, getWidth()/2, getHeight()/2-150);
+        Label startLabel = new Label("Press <space> to begin", 70);
+        addObject(startLabel, getWidth()/2, 300);
+        Label instructionLabel = new Label("Press <s> for instructions", 40);
+        addObject(instructionLabel, getWidth()/2, 650);
  
     }
     
@@ -30,6 +32,11 @@ public class TitleWorld extends World
             MyWorld world = new MyWorld();
             Greenfoot.setWorld(world);
             background.playLoop();
+        }
+        if(Greenfoot.isKeyDown("s"))
+        {
+            InstructionWorld instructions = new InstructionWorld();
+            Greenfoot.setWorld(instructions);
         }
 
     }
