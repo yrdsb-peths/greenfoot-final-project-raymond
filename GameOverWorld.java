@@ -23,15 +23,16 @@ public class GameOverWorld extends World
         titleworld.background.pause();
     }   
     
-    
+    /*
+     * Allows player to play again
+     * @s: Create new MyWorld 
+     */
     public void playAgain()
     {
         if(Greenfoot.isKeyDown("s"))
         {
             MyWorld world = new MyWorld();
             Greenfoot.setWorld(world);
-            TitleWorld titleworld = new TitleWorld();
-            titleworld.background.playLoop();
         }
     }
     

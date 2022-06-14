@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class InstructionWorld here.
+ * Instructions for the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Raymond 
+ * @June 2022
  */
 public class InstructionWorld extends World
 {
@@ -19,6 +19,10 @@ public class InstructionWorld extends World
         super(1280, 720, 1); 
     }
     
+    /*
+     * Checks if user presses <r>
+     * @r: Create new Title world 
+     */
     public void act() 
     {
         if(Greenfoot.isKeyDown("r"))

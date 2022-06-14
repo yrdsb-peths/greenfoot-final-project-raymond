@@ -10,7 +10,7 @@ public class MyWorld extends World
 {
     public int xDirection;
     public int xOff;
-    public int speed = 2;    
+    public int speed = 1;    
     public int score = 0;
     Label scoreLabel;
 
@@ -32,6 +32,9 @@ public class MyWorld extends World
         addObject(scoreLabel, 30, 30);
     }
     
+    /* 
+     * Method used to randomly spawn a coin at the edge of the screen
+     */
     public void spawnCoin()
     {
         int y = Greenfoot.getRandomNumber(512) + 50;
@@ -39,6 +42,10 @@ public class MyWorld extends World
         Coin coin = new Coin();
         addObject(coin, x, y);
     }
+    
+    /*
+     * Method that increases the score and changes the label to reflect the new score.
+     */
     public void increaseScore()
     {
         score++;
@@ -50,6 +57,10 @@ public class MyWorld extends World
         return score;
     }
     
+    /*
+     * Shifts the background of the world, depending on the xDirection the Amongus actor is heading in
+     * Replaces moving the actor with S and D by moving the background instead.
+     */
     public void shiftX(int xDirection)
     {
         this.xDirection = xDirection;
@@ -64,7 +75,6 @@ public class MyWorld extends World
         GreenfootImage bg = new GreenfootImage(getBackground());
         getBackground().drawImage(bg, (speed * xOff), 0);
         getBackground().drawImage(bg, (getWidth() * xOff * -1) + (speed * xOff), 0);
-        
     }
     
     /**

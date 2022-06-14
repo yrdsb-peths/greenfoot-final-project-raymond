@@ -17,6 +17,10 @@ public class Brick extends ScrollingObjects
         getImage().scale(100,100);
     }
     
+    /*
+     * Scrolls through the world when the user presses A and D
+     * Removes Bricks that are out of bounds
+     */
     public void act()
     {
         if(Greenfoot.isKeyDown("a"))

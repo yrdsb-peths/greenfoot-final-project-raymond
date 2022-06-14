@@ -6,6 +6,7 @@ comment1.target=GameOverWorld()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameOverWorld.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ playAgain()
+comment2.text=\r\n\ Allows\ player\ to\ play\ again\r\n\ @s\:\ Create\ new\ MyWorld\ \r\n
 comment3.params=
 comment3.target=void\ act()
 numComments=4

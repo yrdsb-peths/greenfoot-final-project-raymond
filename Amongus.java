@@ -37,20 +37,27 @@ public class Amongus extends Actor
         imageIndex = (imageIndex + 1) % idle.length;
     }
     
-    //use gravitational constant to simulate gravity
+    /*
+     * Method which uses the gravitation constant to accelerate the instance of the Amongus Actor to increase speed
+     */
     public void fall()
     {
         setLocation(getX(), (getY() + (int)vSpeed));
         vSpeed += gravity;
     }
     
+    /*
+     * Checks if the Actor is touching ground, return true if touching Brick class
+     */
     boolean onGround()
     {
         Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Brick.class);
         return under != null;
     }
     
-    //plays hype sound effect everytime score goes up by 10
+    /*
+     * @(score increases by 5): Plays sound effect and increase gravity + jump height
+     */
     public void increaseDifficulty()
     {
         MyWorld world = (MyWorld) getWorld();
@@ -75,7 +82,10 @@ public class Amongus extends Actor
    
     }
     
-    public void checkMoving()
+    /*
+     * @space: Change vertical velocity to jumpHeight, and call the fall() method
+     */
+    public void jump()
     {
         if (Greenfoot.isKeyDown("space") && (onGround()==true))
         {
@@ -105,7 +115,7 @@ public class Amongus extends Actor
     public void act()
     {
         //allow for player input with wasd
-        checkMoving();
+        jump();
         //check if it is on brick, if not, let it fall
         checkFalling();
         grabCoins();
@@ -115,7 +125,6 @@ public class Amongus extends Actor
         {
             GameOverWorld overWorld = new GameOverWorld();
             Greenfoot.setWorld(overWorld);
-    
         }
         increaseDifficulty();
     }

@@ -6,4 +6,5 @@ comment1.target=Brick()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Brick\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Scrolls\ through\ the\ world\ when\ the\ user\ presses\ A\ and\ D\r\n\ Removes\ Bricks\ that\ are\ out\ of\ bounds\r\n
 numComments=3

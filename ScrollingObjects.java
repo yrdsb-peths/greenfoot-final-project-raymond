@@ -8,10 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ScrollingObjects extends Actor
 {
-    /**
-     * Act - do whatever the ScrollingObjects wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    //global random location class is used in the other two subclasses
     public int randomLocation;
 
     public void act()

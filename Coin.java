@@ -26,7 +26,10 @@ public class Coin extends ScrollingObjects
         setImage(idle[0]);
     }
     
-    public void coinCounter()
+    /*
+     * Increases the variable numCoins everytime a coin is spawned
+     */
+    public void createCoin()
     {
         ((MyWorld)getWorld()).spawnCoin();
         numCoins++;   
@@ -42,6 +45,7 @@ public class Coin extends ScrollingObjects
     public void act()
     {
         animateCoin();
+        //scrolls the coins
         if(Greenfoot.isKeyDown("a"))
         {
             setRotation(0);
@@ -54,13 +58,11 @@ public class Coin extends ScrollingObjects
             move(-10);
             ((MyWorld)getWorld()).shiftX(1);
         }
-        MyWorld world = (MyWorld)getWorld();
-        //makes num coin infinitely low; find a way to call the method only once/ remove the current object
-        
-        //if the coin is out of bounds, remove coin, lower the # of coins, call coinCounter function, which spawns a coin and increases the coinCount
+        MyWorld world = (MyWorld)getWorld();        
+        //Replaces coins that are out of bounds
         if (getX() <= 1)
         {
-            coinCounter();
+            createCoin();
             world.removeObject(this);
             numCoins--;
         }
