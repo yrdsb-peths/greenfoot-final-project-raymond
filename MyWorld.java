@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Main world class where the plahyer plays the game.
+ * Main world class where the player plays the game.
  * 
  * @author: Raymond
  * @version: June 2022
@@ -32,18 +32,18 @@ public class MyWorld extends World
         addObject(scoreLabel, 30, 30);
     }
     
-    /* 
+    /** 
      * Method used to randomly spawn a coin at the edge of the screen
      */
     public void spawnCoin()
     {
-        int y = Greenfoot.getRandomNumber(512) + 50;
+        int y = Greenfoot.getRandomNumber(300) + 50;
         int x = 1540;
         Coin coin = new Coin();
         addObject(coin, x, y);
     }
     
-    /*
+    /**
      * Method that increases the score and changes the label to reflect the new score.
      */
     public void increaseScore()
@@ -57,7 +57,7 @@ public class MyWorld extends World
         return score;
     }
     
-    /*
+    /**
      * Shifts the background of the world, depending on the xDirection the Amongus actor is heading in
      * Replaces moving the actor with S and D by moving the background instead.
      */

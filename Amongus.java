@@ -40,7 +40,7 @@ public class Amongus extends Actor
     /*
      * Method which uses the gravitation constant to accelerate the instance of the Amongus Actor to increase speed
      */
-    public void fall()
+    private void fall()
     {
         setLocation(getX(), (getY() + (int)vSpeed));
         vSpeed += gravity;
@@ -55,10 +55,10 @@ public class Amongus extends Actor
         return under != null;
     }
     
-    /*
+    /**
      * @(score increases by 5): Plays sound effect and increase gravity + jump height
      */
-    public void increaseDifficulty()
+    private void increaseDifficulty()
     {
         MyWorld world = (MyWorld) getWorld();
         if (world.getScore() % 5 == 0 && world.getScore() != 0)
@@ -85,7 +85,7 @@ public class Amongus extends Actor
     /*
      * @space: Change vertical velocity to jumpHeight, and call the fall() method
      */
-    public void jump()
+    private void jump()
     {
         if (Greenfoot.isKeyDown("space") && (onGround()==true))
         {
@@ -95,7 +95,7 @@ public class Amongus extends Actor
  
     }
     
-    public void checkFalling()
+    private void checkFalling()
     {
         if (onGround() == false)
         {

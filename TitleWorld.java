@@ -8,8 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleWorld extends World
 {
 
-    //title label
-    Label titleLabel = new Label("Amongus", 100);
+    Label titleLabel = new Label("Amongus", 100);     //title label
     //set background
     static GreenfootSound background = new GreenfootSound("amongus_background.mp3");
     
