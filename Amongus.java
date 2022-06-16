@@ -127,5 +127,6 @@ public class Amongus extends Actor
             Greenfoot.setWorld(overWorld);
         }
         increaseDifficulty();
+        animateAmongus();
     }
 }
